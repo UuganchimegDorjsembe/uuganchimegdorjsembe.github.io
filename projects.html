@@ -15,7 +15,11 @@
       property="og:description"
       content="Software engineer &amp; game programmer. Websites, gameplay systems, and the infrastructure behind them."
     />
-    <link rel="icon" href="./assets/icons/favicon.svg?v=avatar" type="image/svg+xml" />
+    <link
+      rel="icon"
+      href="./assets/icons/favicon.svg?v=avatar"
+      type="image/svg+xml"
+    />
     <link
       rel="preload"
       href="./assets/fonts/Manrope.ttf"
@@ -25,8 +29,10 @@
     />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
+    <link rel="stylesheet" href="./css/project-pages.css" />
     <script src="./js/portfolio-data.js" defer></script>
     <script src="./js/main.js" defer></script>
+    <script src="./js/project-pages.js" defer></script>
   </head>
   <body data-page="projects">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -47,10 +53,7 @@
         <a href="./about.html#skills">Skills</a>
         <a href="./about.html#contact">Contact</a>
       </nav>
-      <a
-        class="print-button"
-        href="./cv.html"
-        data-cv-preview-link
+      <a class="print-button" href="./cv.html" data-cv-preview-link
         >View CV <span aria-hidden="true">↗</span></a
       >
       <details class="mobile-menu">
@@ -71,9 +74,7 @@
           >
           <a href="./about.html#contact"
             >Contact<span aria-hidden="true">↗</span></a
-          ><a
-            href="./cv.html"
-            data-cv-preview-link
+          ><a href="./cv.html" data-cv-preview-link
             >View CV <span aria-hidden="true">↗</span></a
           ><a href="./print.html"
             >Print portfolio <span aria-hidden="true">↗</span></a
@@ -83,183 +84,326 @@
     </header>
     <main id="main">
       <section class="page-intro shell">
-        <p class="eyebrow">Projects & experience</p>
+        <p class="eyebrow">Projects &amp; experience</p>
         <h1 class="page-title">
           Things I’ve worked on<span class="name-period">.</span>
         </h1>
         <p>Websites, gameplay systems, and game server infrastructure.</p>
       </section>
-      <section class="section shell" aria-label="1sT.MN project">
-        <article class="project-case" id="first-mn" data-project="first-mn">
-          <div class="featured-project">
-            <div class="project-visual first-mn-visual" data-project-visual>
-              <span class="eyebrow">Web & infrastructure</span
+      <section
+        class="section shell project-directory"
+        aria-label="Selected projects"
+      >
+        <div class="directory-toolbar">
+          <div
+            class="project-filters"
+            data-project-filters
+            hidden
+            aria-label="Filter projects"
+          >
+            <button
+              type="button"
+              data-project-filter="all"
+              aria-pressed="true"
+              class="is-active"
+            >
+              All projects
+            </button>
+            <button
+              type="button"
+              data-project-filter="web"
+              aria-pressed="false"
+            >
+              Web &amp; servers
+            </button>
+            <button
+              type="button"
+              data-project-filter="roblox"
+              aria-pressed="false"
+            >
+              Roblox
+            </button>
+          </div>
+          <p class="filter-status" data-filter-status role="status">
+            4 projects
+          </p>
+        </div>
+        <div class="work-grid">
+          <article
+            class="work-card"
+            id="first-mn"
+            data-project="first-mn"
+            data-project-category="web"
+          >
+            <a
+              class="work-preview preview-first"
+              href="./first-mn.html"
+              data-project-page="first-mn"
+              aria-label="Read about my work on 1sT.MN (opens in a new tab)"
+              target="_blank"
+              rel="noopener noreferrer"
               ><img
                 class="project-logo"
                 src="./assets/projects/first-mn-logo.png"
                 alt="Official 1sT.MN logo"
                 width="1000"
                 height="1000"
-              /><span class="asset-placeholder">Official project identity</span>
-            </div>
-            <div class="project-overview">
-              <p class="eyebrow">Independent development</p>
-              <h2 data-project-title>1sT.MN</h2>
-              <p data-project-summary>
-                I independently developed the website in TypeScript, built
-                CounterStrikeSharp plugins in C#, and created a separate Discord
-                bot in JavaScript.
-              </p>
-              <ul class="responsibility-list">
-                <li>Website development</li>
-                <li>Game server plugins</li>
-                <li>Discord bot development</li>
-                <li>Work coordination and team management</li>
-              </ul>
-              <div class="technology-list" data-project-technologies>
-                <span>TypeScript</span><span>C#</span><span>JavaScript</span>
-              </div>
-              <div class="project-links" data-project-links>
-                <a href="https://1st.mn/"
-                   aria-label="Visit project website (opens in a new tab)" target="_blank" rel="noopener noreferrer">Visit project website <span aria-hidden="true">↗</span></a
+                loading="lazy"
+            /></a>
+            <div class="work-card-meta">
+              <h3 data-project-title>
+                <a
+                  href="./first-mn.html"
+                  data-project-page="first-mn"
+                  aria-label="1sT.MN (opens in a new tab)"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >1sT.MN</a
                 >
-              </div>
+              </h3>
+              <span class="project-type">Web & infrastructure</span>
             </div>
-          </div>
-        </article>
+            <p class="work-description">
+              Independent TypeScript website, C# server plugins, and a separate
+              JavaScript Discord bot.
+            </p>
+            <p class="inline-tech">
+              TypeScript <span>·</span> C# <span>·</span> JavaScript
+            </p>
+          </article>
+          <article
+            class="work-card"
+            id="arsenal"
+            data-project="arsenal"
+            data-project-category="roblox"
+          >
+            <a
+              class="work-preview preview-game"
+              href="./arsenal.html"
+              data-project-page="arsenal"
+              aria-label="Read about my Arsenal contributions (opens in a new tab)"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                src="./assets/projects/arsenal-rolve.png"
+                alt="Official Arsenal game artwork"
+                width="512"
+                height="512"
+                loading="lazy"
+            /></a>
+            <div class="work-card-meta">
+              <h3 data-project-title>
+                <a
+                  href="./arsenal.html"
+                  data-project-page="arsenal"
+                  aria-label="Arsenal (opens in a new tab)"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Arsenal</a
+                >
+              </h3>
+              <span class="project-type">Game programming</span>
+            </div>
+            <p class="work-description">
+              Weapon framework, Gun Game rotation, persistent player data, and
+              progression systems.
+            </p>
+            <p class="inline-tech">
+              Lua <span>·</span> Roblox <span>·</span> DataStore
+            </p>
+          </article>
+          <article
+            class="work-card"
+            id="counter-blox"
+            data-project="counter-blox"
+            data-project-category="roblox"
+          >
+            <a
+              class="work-preview preview-game"
+              href="./counter-blox.html"
+              data-project-page="counter-blox"
+              aria-label="Read about my Counter Blox contributions (opens in a new tab)"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                src="./assets/projects/counter-blox.png"
+                alt="Official Counter Blox game artwork"
+                width="512"
+                height="512"
+                loading="lazy"
+            /></a>
+            <div class="work-card-meta">
+              <h3 data-project-title>
+                <a
+                  href="./counter-blox.html"
+                  data-project-page="counter-blox"
+                  aria-label="Counter Blox (opens in a new tab)"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Counter Blox</a
+                >
+              </h3>
+              <span class="project-type">Game programming</span>
+            </div>
+            <p class="work-description">
+              Weapon framework, persistent data, Twitter code redemption, and
+              trading.
+            </p>
+            <p class="inline-tech">
+              Lua <span>·</span> Roblox <span>·</span> DataStore
+            </p>
+          </article>
+          <article
+            class="work-card"
+            id="typical-colors-2"
+            data-project="typical-colors-2"
+            data-project-category="roblox"
+          >
+            <a
+              class="work-preview preview-game"
+              href="./typical-colors-2.html"
+              data-project-page="typical-colors-2"
+              aria-label="Read about my Typical Colors 2 contributions (opens in a new tab)"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                src="./assets/projects/typical-colors-2.png"
+                alt="Official Typical Colors 2 game artwork"
+                width="512"
+                height="512"
+                loading="lazy"
+            /></a>
+            <div class="work-card-meta">
+              <h3 data-project-title>
+                <a
+                  href="./typical-colors-2.html"
+                  data-project-page="typical-colors-2"
+                  aria-label="Typical Colors 2 (opens in a new tab)"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Typical Colors 2</a
+                >
+              </h3>
+              <span class="project-type">Game programming</span>
+            </div>
+            <p class="work-description">
+              Object oriented PlayerClass architecture, player data, and
+              gameplay rotation.
+            </p>
+            <p class="inline-tech">
+              Lua <span>·</span> Roblox <span>·</span> DataStore
+            </p>
+          </article>
+        </div>
       </section>
       <section
-        class="section shell"
+        class="experience-context shell"
         id="experience"
         aria-labelledby="experience-title"
       >
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Roblox programming</p>
-            <h2 id="experience-title">Game experience</h2>
+        <p class="eyebrow">Roblox development · Approximately 2015 to 2023</p>
+        <h2 id="experience-title">Built within a team.</h2>
+        <p>
+          My work across these games spanned core gameplay, persistent player
+          data, and progression systems, using Roblox’s built-in development
+          environment.
+        </p>
+        <div
+          class="systems-explorer"
+          data-system-explorer
+          aria-label="Shared DataStore experience"
+        >
+          <div class="systems-heading">
+            <p class="eyebrow">DataStore experience across the games</p>
+            <h2>What the data supports.</h2>
           </div>
-        </div>
-        <div class="experience-grid">
-          <article class="experience-card" id="arsenal" data-project="arsenal">
-            <div class="game-art" data-project-visual>
-              <img
-                src="./assets/projects/arsenal-rolve.png"
-                alt="Official Arsenal artwork"
-                width="512"
-                height="512"
-                loading="lazy"
-              />
-            </div>
-            <div class="experience-content">
-              <span class="entry-number">Events &amp; progression</span>
-              <h3 data-project-title>Arsenal</h3>
-              <h4 class="contribution-label">Gameplay</h4>
-              <p data-project-summary>
-                Focused on gun mechanics and gameplay rotation, with additional
-                work on events and the battlepass.
-              </p>
-              <div class="persistence-details">
-                <h4 class="contribution-label">DataStore</h4>
-                <p class="persistence-copy" data-detail="0">
-                  Worked on persistent inventory, player stats, event progress,
-                  and battlepass progress using Roblox DataStore.
+          <div class="systems-layout">
+            <nav
+              class="system-tabs"
+              data-system-tabs
+              aria-label="Data categories"
+            >
+              <a id="tab-data-purchases" href="#data-purchases" data-system-tab
+                >Purchases</a
+              >
+              <a
+                id="tab-data-statistics"
+                href="#data-statistics"
+                data-system-tab
+                >Player statistics</a
+              >
+              <a id="tab-data-inventory" href="#data-inventory" data-system-tab
+                >Inventory</a
+              >
+              <a id="tab-data-audit" href="#data-audit" data-system-tab
+                >Audit logs</a
+              >
+              <a id="tab-data-events" href="#data-events" data-system-tab
+                >Event progression</a
+              >
+            </nav>
+            <div class="system-panels">
+              <section
+                class="system-panel"
+                id="data-purchases"
+                data-system-panel
+              >
+                <p class="eyebrow">Persistent data</p>
+                <h3>Purchases</h3>
+                <p>
+                  Purchase-related data was one category I worked with across
+                  the Roblox projects.
                 </p>
-              </div>
-              <div class="technology-list" data-project-technologies>
-                <span>Lua / Roblox</span><span>DataStore</span>
-              </div>
-              <div class="project-links" data-project-links>
-                <a href="https://www.roblox.com/games/286090429/Arsenal"
-                   aria-label="Official game (opens in a new tab)" target="_blank" rel="noopener noreferrer">Official game <span aria-hidden="true">↗</span></a
-                >
-              </div>
-            </div>
-          </article>
-          <article
-            class="experience-card"
-            id="counter-blox"
-            data-project="counter-blox"
-          >
-            <div class="game-art" data-project-visual>
-              <img
-                src="./assets/projects/counter-blox.png"
-                alt="Official Counter Blox artwork"
-                width="512"
-                height="512"
-                loading="lazy"
-              />
-            </div>
-            <div class="experience-content">
-              <span class="entry-number">Weapons &amp; economy</span>
-              <h3 data-project-title>Counter Blox</h3>
-              <h4 class="contribution-label">Gameplay</h4>
-              <p data-project-summary>
-                Worked on gun mechanics, gameplay rotation, and the game economy
-                system.
-              </p>
-              <div class="persistence-details">
-                <h4 class="contribution-label">DataStore</h4>
-                <p class="persistence-copy" data-detail="0">
-                  Worked with DataStore systems for persistent economy and
-                  inventory data.
+              </section>
+              <section
+                class="system-panel"
+                id="data-statistics"
+                data-system-panel
+              >
+                <p class="eyebrow">Persistent data</p>
+                <h3>Player statistics</h3>
+                <p>
+                  Player statistics retained between sessions, with
+                  project-specific details on each game’s page.
                 </p>
-              </div>
-              <div class="technology-list" data-project-technologies>
-                <span>Lua / Roblox</span><span>DataStore</span>
-              </div>
-              <div class="project-links" data-project-links>
-                <a href="https://www.roblox.com/games/301549746/Counter-Blox"
-                   aria-label="Official game (opens in a new tab)" target="_blank" rel="noopener noreferrer">Official game <span aria-hidden="true">↗</span></a
-                >
-              </div>
-            </div>
-          </article>
-          <article
-            class="experience-card"
-            id="typical-colors-2"
-            data-project="typical-colors-2"
-          >
-            <div class="game-art" data-project-visual>
-              <img
-                src="./assets/projects/typical-colors-2.png"
-                alt="Official Typical Colors 2 artwork"
-                width="512"
-                height="512"
-                loading="lazy"
-              />
-            </div>
-            <div class="experience-content">
-              <span class="entry-number">Weapons &amp; class selection</span>
-              <h3 data-project-title>Typical Colors 2</h3>
-              <h4 class="contribution-label">Gameplay</h4>
-              <p data-project-summary>
-                Worked on gun mechanics, gameplay rotation, and class selection.
-              </p>
-              <div class="persistence-details">
-                <h4 class="contribution-label">DataStore</h4>
-                <p class="persistence-copy" data-detail="0">
-                  Worked on DataStore persistence for inventory, player stats,
-                  settings, and custom map builder data.
+              </section>
+              <section
+                class="system-panel"
+                id="data-inventory"
+                data-system-panel
+              >
+                <p class="eyebrow">Persistent data</p>
+                <h3>Inventory</h3>
+                <p>
+                  Inventory persistence was part of my DataStore work on
+                  Arsenal, Counter Blox, and Typical Colors 2.
                 </p>
-              </div>
-              <div class="technology-list" data-project-technologies>
-                <span>Lua / Roblox</span><span>DataStore</span>
-              </div>
-              <div class="project-links" data-project-links>
-                <a
-                  href="https://www.roblox.com/games/328028363/Typical-Colors-2"
-                   aria-label="Official game (opens in a new tab)" target="_blank" rel="noopener noreferrer">Official game <span aria-hidden="true">↗</span></a
-                >
-              </div>
+              </section>
+              <section class="system-panel" id="data-audit" data-system-panel>
+                <p class="eyebrow">Persistent data</p>
+                <h3>Audit logs</h3>
+                <p>
+                  My shared DataStore experience also included audit log data
+                  within the games I contributed to.
+                </p>
+              </section>
+              <section class="system-panel" id="data-events" data-system-panel>
+                <p class="eyebrow">Persistent data</p>
+                <h3>Event progression</h3>
+                <p>
+                  Retaining progression between sessions, including Arsenal’s
+                  event and battlepass progress.
+                </p>
+              </section>
             </div>
-          </article>
+          </div>
         </div>
       </section>
       <section class="contact-section shell">
         <div class="contact-layout">
           <h2>More about me.</h2>
           <a class="text-link" href="./about.html"
-            >Background & skills <span aria-hidden="true">↗</span></a
+            >About &amp; skills <span aria-hidden="true">↗</span></a
           >
         </div>
       </section>

@@ -18,7 +18,11 @@
       property="og:description"
       content="Software engineer &amp; game programmer. Websites, gameplay systems, and the infrastructure behind them."
     />
-    <link rel="icon" href="./assets/icons/favicon.svg?v=avatar" type="image/svg+xml" />
+    <link
+      rel="icon"
+      href="./assets/icons/favicon.svg?v=avatar"
+      type="image/svg+xml"
+    />
     <link
       rel="preload"
       href="./assets/fonts/Manrope.ttf"
@@ -50,10 +54,7 @@
         <a href="./about.html#skills">Skills</a>
         <a href="./about.html#contact">Contact</a>
       </nav>
-      <a
-        class="print-button"
-        href="./cv.html"
-        data-cv-preview-link
+      <a class="print-button" href="./cv.html" data-cv-preview-link
         >View CV <span aria-hidden="true">↗</span></a
       >
       <details class="mobile-menu">
@@ -74,9 +75,7 @@
           >
           <a href="./about.html#contact"
             >Contact<span aria-hidden="true">↗</span></a
-          ><a
-            href="./cv.html"
-            data-cv-preview-link
+          ><a href="./cv.html" data-cv-preview-link
             >View CV <span aria-hidden="true">↗</span></a
           ><a href="./print.html"
             >Print portfolio <span aria-hidden="true">↗</span></a
@@ -109,10 +108,7 @@
               data-email-link
               data-email-label="Say hello"
               >Say hello <span aria-hidden="true">↗</span></a
-            ><a
-              class="text-link"
-              href="./cv.html"
-              data-cv-preview-link
+            ><a class="text-link" href="./cv.html" data-cv-preview-link
               >View CV <span aria-hidden="true">↗</span></a
             >
           </div>
@@ -127,27 +123,36 @@
         >
           <a
             class="hero-tile tile-arsenal"
-            href="./projects.html#arsenal"
+            href="./arsenal.html"
+            data-project-page="arsenal"
             aria-label="My Arsenal contributions (opens in a new tab)"
-             target="_blank" rel="noopener noreferrer"><img
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
               src="./assets/projects/arsenal-rolve.png"
               alt="Arsenal official artwork"
               width="512"
               height="512" /></a
           ><a
             class="hero-tile tile-colors"
-            href="./projects.html#typical-colors-2"
+            href="./typical-colors-2.html"
+            data-project-page="typical-colors-2"
             aria-label="My Typical Colors 2 contributions (opens in a new tab)"
-             target="_blank" rel="noopener noreferrer"><img
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
               src="./assets/projects/typical-colors-2.png"
               alt="Typical Colors 2 official artwork"
               width="512"
               height="512" /></a
           ><a
             class="hero-tile tile-first"
-            href="./projects.html#first-mn"
+            href="./first-mn.html"
+            data-project-page="first-mn"
             aria-label="My 1sT.MN project (opens in a new tab)"
-             target="_blank" rel="noopener noreferrer"><img
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
               src="./assets/projects/first-mn-logo.png"
               alt="Official 1sT.MN logo"
               width="1000"
@@ -174,9 +179,12 @@
           <article class="work-card" data-project="first-mn">
             <a
               class="work-preview preview-first"
-              href="./projects.html#first-mn"
+              href="./first-mn.html"
+              data-project-page="first-mn"
               aria-label="Read about my work on 1sT.MN (opens in a new tab)"
-               target="_blank" rel="noopener noreferrer"><img
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
                 class="project-logo"
                 src="./assets/projects/first-mn-logo.png"
                 alt="Official 1sT.MN logo"
@@ -186,12 +194,20 @@
             /></a>
             <div class="work-card-meta">
               <h3 data-project-title>
-                <a href="./projects.html#first-mn" aria-label="1sT.MN (opens in a new tab)" target="_blank" rel="noopener noreferrer">1sT.MN</a>
+                <a
+                  href="./first-mn.html"
+                  data-project-page="first-mn"
+                  aria-label="1sT.MN (opens in a new tab)"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >1sT.MN</a
+                >
               </h3>
               <span class="project-type">Web & infrastructure</span>
             </div>
             <p class="work-description">
-              Website development, game server plugins, and a Discord bot.
+              Independent TypeScript website, C# server plugins, and a separate
+              JavaScript Discord bot.
             </p>
             <p class="inline-tech">
               TypeScript <span>·</span> C# <span>·</span> JavaScript
@@ -200,9 +216,12 @@
           <article class="work-card" data-project="arsenal">
             <a
               class="work-preview preview-game"
-              href="./projects.html#arsenal"
+              href="./arsenal.html"
+              data-project-page="arsenal"
               aria-label="Read about my Arsenal contributions (opens in a new tab)"
-               target="_blank" rel="noopener noreferrer"><img
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
                 src="./assets/projects/arsenal-rolve.png"
                 alt="Official Arsenal game artwork"
                 width="512"
@@ -211,12 +230,20 @@
             /></a>
             <div class="work-card-meta">
               <h3 data-project-title>
-                <a href="./projects.html#arsenal" aria-label="Arsenal (opens in a new tab)" target="_blank" rel="noopener noreferrer">Arsenal</a>
+                <a
+                  href="./arsenal.html"
+                  data-project-page="arsenal"
+                  aria-label="Arsenal (opens in a new tab)"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Arsenal</a
+                >
               </h3>
               <span class="project-type">Game programming</span>
             </div>
             <p class="work-description">
-              Gun systems, gameplay rotation, events, and battlepass features.
+              Weapon framework, Gun Game rotation, persistent player data, and
+              progression systems.
             </p>
             <p class="inline-tech">
               Lua <span>·</span> Roblox <span>·</span> DataStore
@@ -225,9 +252,12 @@
           <article class="work-card" data-project="counter-blox">
             <a
               class="work-preview preview-game"
-              href="./projects.html#counter-blox"
+              href="./counter-blox.html"
+              data-project-page="counter-blox"
               aria-label="Read about my Counter Blox contributions (opens in a new tab)"
-               target="_blank" rel="noopener noreferrer"><img
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
                 src="./assets/projects/counter-blox.png"
                 alt="Official Counter Blox game artwork"
                 width="512"
@@ -236,12 +266,20 @@
             /></a>
             <div class="work-card-meta">
               <h3 data-project-title>
-                <a href="./projects.html#counter-blox" aria-label="Counter Blox (opens in a new tab)" target="_blank" rel="noopener noreferrer">Counter Blox</a>
+                <a
+                  href="./counter-blox.html"
+                  data-project-page="counter-blox"
+                  aria-label="Counter Blox (opens in a new tab)"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Counter Blox</a
+                >
               </h3>
               <span class="project-type">Game programming</span>
             </div>
             <p class="work-description">
-              Gun systems, gameplay rotation, and the game economy.
+              Weapon framework, persistent data, Twitter code redemption, and
+              trading.
             </p>
             <p class="inline-tech">
               Lua <span>·</span> Roblox <span>·</span> DataStore
@@ -250,9 +288,12 @@
           <article class="work-card" data-project="typical-colors-2">
             <a
               class="work-preview preview-game"
-              href="./projects.html#typical-colors-2"
+              href="./typical-colors-2.html"
+              data-project-page="typical-colors-2"
               aria-label="Read about my Typical Colors 2 contributions (opens in a new tab)"
-               target="_blank" rel="noopener noreferrer"><img
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
                 src="./assets/projects/typical-colors-2.png"
                 alt="Official Typical Colors 2 game artwork"
                 width="512"
@@ -261,12 +302,20 @@
             /></a>
             <div class="work-card-meta">
               <h3 data-project-title>
-                <a href="./projects.html#typical-colors-2" aria-label="Typical Colors 2 (opens in a new tab)" target="_blank" rel="noopener noreferrer">Typical Colors 2</a>
+                <a
+                  href="./typical-colors-2.html"
+                  data-project-page="typical-colors-2"
+                  aria-label="Typical Colors 2 (opens in a new tab)"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Typical Colors 2</a
+                >
               </h3>
               <span class="project-type">Game programming</span>
             </div>
             <p class="work-description">
-              Gun systems, gameplay rotation, and class selection.
+              Object oriented PlayerClass architecture, player data, and
+              gameplay rotation.
             </p>
             <p class="inline-tech">
               Lua <span>·</span> Roblox <span>·</span> DataStore
@@ -288,7 +337,9 @@
               >
             </div>
             <div class="contact-item">
-              <span class="contact-kind" data-contact-method="discord">Discord</span>
+              <span class="contact-kind" data-contact-method="discord"
+                >Discord</span
+              >
               <div class="discord-contact">
                 <span class="contact-value">@marigold669</span>
               </div>

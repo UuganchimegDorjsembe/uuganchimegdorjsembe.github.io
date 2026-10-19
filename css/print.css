@@ -878,3 +878,213 @@ body[data-page="print"] {
     overflow-wrap: anywhere;
   }
 }
+
+/* Five content groups keep the expanded contributions readable on A4. */
+.print-document .print-profile-heading {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+}
+.print-document .print-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.print-document .responsibility-list {
+  display: block;
+  margin: 16px 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+.print-document .responsibility-list li + li {
+  margin-top: 4px;
+}
+.print-document .print-context {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid #b9bcb3;
+}
+.print-document .print-context h3 {
+  margin: 8px 0 12px;
+}
+.print-document .print-context > p:not(.eyebrow) {
+  color: #454940;
+}
+.print-document .print-period {
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.print-document .print-bullets {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+.print-document .print-bullets li {
+  color: #454940;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.print-document .print-note {
+  margin-top: 20px;
+  color: #575b52;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.print-document .experience-card .print-technical,
+.print-document .experience-card .print-lesson {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.print-document .print-technical strong,
+.print-document .print-lesson strong {
+  font-weight: 600;
+}
+.print-document .print-highlight {
+  margin: 20px 0;
+  padding: 12px 16px;
+  border-left: 2px solid #b9bcb3;
+}
+.print-document .print-highlight h4 {
+  margin-bottom: 8px;
+}
+.print-document .print-page-link {
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.print-document .print-reference-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+.print-document .print-reference-row .print-page-link,
+.print-document .print-reference-row .project-links {
+  margin: 12px 0 0;
+}
+
+@media screen and (max-width: 600px) {
+  .print-document .print-profile-heading {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 16px;
+  }
+  .print-document .print-avatar {
+    width: 64px;
+    height: 64px;
+  }
+  .print-document .print-profile-heading h1 {
+    font-size: clamp(28px, 7vw, 40px);
+  }
+}
+
+@media print {
+  .print-document .print-profile-heading {
+    grid-template-columns: 24mm minmax(0, 1fr);
+    gap: 6mm;
+  }
+  .print-document .print-avatar {
+    width: 24mm;
+    height: 24mm;
+    border-radius: 2mm;
+    filter: grayscale(1);
+  }
+  .print-document .print-project-index > section {
+    padding-block: 4mm;
+  }
+  .print-document .print-context {
+    margin-top: 10mm;
+    padding-top: 6mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .print-document .print-context h3 {
+    margin: 2mm 0 3mm;
+    font-size: 16pt;
+    line-height: 1.2;
+  }
+  .print-document .print-context > p:not(.eyebrow) {
+    color: #333;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+  .print-document .print-context .print-period {
+    margin-bottom: 4mm;
+    font-size: 10pt;
+  }
+  .print-document .print-bullets {
+    gap: 2mm;
+    margin-top: 4mm;
+    padding-left: 5mm;
+  }
+  .print-document .print-bullets li {
+    color: #333;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+  .print-document .print-note {
+    margin-top: 5mm;
+    font-size: 9pt;
+    line-height: 1.4;
+    color: #454545;
+  }
+  .print-document .experience-card p {
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+  .print-document .experience-card .print-technical,
+  .print-document .experience-card .print-lesson {
+    margin-top: 3mm;
+    font-size: 10pt;
+    line-height: 1.4;
+  }
+  .print-document .print-highlight {
+    margin: 5mm 0;
+    padding: 3mm 4mm;
+    border-left-width: 0.5mm;
+  }
+  .print-document .print-highlight h4 {
+    margin-bottom: 2mm;
+    font-size: 12pt;
+  }
+  .print-document .print-page-link {
+    margin-top: 4mm;
+    font-size: 9pt;
+    line-height: 1.35;
+  }
+  .print-document .print-reference-row {
+    gap: 2mm 5mm;
+  }
+  .print-document .print-reference-row .print-page-link,
+  .print-document .print-reference-row .project-links {
+    margin-top: 3mm;
+  }
+  .print-document .responsibility-list li + li {
+    margin-top: 1mm;
+  }
+  .print-document #print-skills .skills-grid {
+    gap: 5mm 8mm;
+    margin-top: 5mm;
+  }
+  .print-document .print-education {
+    margin-top: 7mm;
+    padding-top: 4mm;
+  }
+  .print-document .print-education + h2 {
+    margin-top: 6mm;
+  }
+  .print-document .contact-list {
+    display: grid;
+    width: 100%;
+    max-width: none;
+    gap: 3mm;
+    margin-top: 5mm;
+  }
+  .print-document .contact-item {
+    width: 100%;
+  }
+}

@@ -31,6 +31,14 @@
     anchor.append(arrow);
     return anchor;
   };
+  document.querySelectorAll("[data-project-page]").forEach((anchor) => {
+    const project = (data.projects || []).find(
+      (item) => item.id === anchor.dataset.projectPage,
+    );
+    if (project && /^\.\/[a-z0-9-]+\.html$/i.test(project.page || "")) {
+      anchor.setAttribute("href", project.page);
+    }
+  });
   const fillList = (container, items, tag) => {
     if (!container || !Array.isArray(items)) return;
     container.replaceChildren(
@@ -137,7 +145,13 @@
         links.hidden = !url;
         links.replaceChildren(
           ...(url
-            ? [makeLink(project.referenceLabel || "Project reference", url, true)]
+            ? [
+                makeLink(
+                  project.referenceLabel || "Project reference",
+                  url,
+                  true,
+                ),
+              ]
             : []),
         );
       }
