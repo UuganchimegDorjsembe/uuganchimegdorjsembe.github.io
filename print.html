@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f5f0" />
+    <title>Printable portfolio | Dorjsembe</title>
+    <meta
+      name="description"
+      content="Dorjsembe, also known as marigold, is a software engineer and game programmer based in Mongolia. Selected work in web development, Roblox gameplay, persistent data, and game server plugins."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Printable portfolio | Dorjsembe" />
+    <meta
+      property="og:description"
+      content="Software engineer &amp; game programmer. Websites, gameplay systems, and the infrastructure behind them."
+    />
+    <link rel="icon" href="./assets/icons/favicon.svg?v=avatar" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="./assets/fonts/Manrope.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/print.css" />
+    <script src="./js/portfolio-data.js" defer></script>
+    <script src="./js/main.js" defer></script>
+  </head>
+  <body data-page="print">
+    <header class="print-toolbar screen-only shell">
+      <a href="./index.html">← Back to website</a
+      ><a
+        class="text-link"
+        href="./cv.html"
+        data-cv-preview-link
+        >View CV <span aria-hidden="true">↗</span></a
+      ><button class="button button-primary js-only" data-print type="button">
+        Print / Save as PDF <span aria-hidden="true">↗</span></button
+      ><noscript>Use your browser’s Print command to save as PDF.</noscript>
+    </header>
+    <main id="main" class="print-document">
+      <section class="print-page" id="print-profile">
+        <div class="print-heading">
+          <p class="eyebrow">Portfolio</p>
+          <h1 data-profile-name>Dorjsembe</h1>
+          <p class="print-role">Software engineer & game programmer</p>
+          <p data-profile-full-name>Uuganchimeg Dorjsembe</p>
+          <p class="profile-alias">
+            also known as <span data-profile-alias>marigold</span>
+          </p>
+          <a class="print-email" href="mailto:dorjsembe@1st.mn" data-email-link
+            >dorjsembe@1st.mn</a
+          >
+        </div>
+        <p class="print-intro">
+          Based in Mongolia. I build websites, gameplay systems, persistent data
+          systems, and game server infrastructure.
+        </p>
+        <h2>Selected projects</h2>
+        <div class="print-project-index">
+          <section>
+            <h2>1sT.MN</h2>
+            <p>
+              Independent website development, C# game server plugins, and a
+              separate JavaScript Discord bot.
+            </p>
+          </section>
+          <section>
+            <h2>Arsenal</h2>
+            <p>
+              Gun systems, gameplay rotation, events, and battlepass features.
+            </p>
+          </section>
+          <section>
+            <h2>Counter Blox</h2>
+            <p>Gun systems, gameplay rotation, and the game economy.</p>
+          </section>
+          <section>
+            <h2>Typical Colors 2</h2>
+            <p>Gun systems, gameplay rotation, and class selection.</p>
+          </section>
+        </div>
+      </section>
+      <section class="print-page" id="print-project">
+        <div class="section-header">
+          <p class="eyebrow">Featured project</p>
+        </div>
+        <article class="project-case" id="first-mn" data-project="first-mn">
+          <div class="featured-project">
+            <div class="project-visual first-mn-visual" data-project-visual>
+              <span class="eyebrow">Web & infrastructure</span
+              ><img
+                class="project-logo"
+                src="./assets/projects/first-mn-logo.png"
+                alt="Official 1sT.MN logo"
+                width="1000"
+                height="1000"
+              /><span class="asset-placeholder">Official project identity</span>
+            </div>
+            <div class="project-overview">
+              <p class="eyebrow">Independent development</p>
+              <h2 data-project-title>1sT.MN</h2>
+              <p data-project-summary>
+                I independently developed the website in TypeScript, built
+                CounterStrikeSharp plugins in C#, and created a separate Discord
+                bot in JavaScript.
+              </p>
+              <ul class="responsibility-list">
+                <li>Website development</li>
+                <li>Game server plugins</li>
+                <li>Discord bot development</li>
+                <li>Work coordination and team management</li>
+              </ul>
+              <div class="technology-list" data-project-technologies>
+                <span>TypeScript</span><span>C#</span><span>JavaScript</span>
+              </div>
+              <div class="project-links" data-project-links>
+                <a href="https://1st.mn/"
+                   aria-label="Visit project website (opens in a new tab)" target="_blank" rel="noopener noreferrer">Visit project website <span aria-hidden="true">↗</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="print-page" id="print-experience">
+        <div class="section-header"><h2>Game programming experience</h2></div>
+        <div class="experience-grid">
+          <article class="experience-card" id="arsenal" data-project="arsenal">
+            <div class="game-art" data-project-visual>
+              <img
+                src="./assets/projects/arsenal-rolve.png"
+                alt="Official Arsenal artwork"
+                width="512"
+                height="512"
+                loading="lazy"
+              />
+            </div>
+            <div class="experience-content">
+              <span class="entry-number">Events &amp; progression</span>
+              <h3 data-project-title>Arsenal</h3>
+              <h4 class="contribution-label">Gameplay</h4>
+              <p data-project-summary>
+                Focused on gun mechanics and gameplay rotation, with additional
+                work on events and the battlepass.
+              </p>
+              <div class="persistence-details">
+                <h4 class="contribution-label">DataStore</h4>
+                <p class="persistence-copy" data-detail="0">
+                  Worked on persistent inventory, player stats, event progress,
+                  and battlepass progress using Roblox DataStore.
+                </p>
+              </div>
+              <div class="technology-list" data-project-technologies>
+                <span>Lua / Roblox</span><span>DataStore</span>
+              </div>
+              <div class="project-links" data-project-links>
+                <a href="https://www.roblox.com/games/286090429/Arsenal"
+                   aria-label="Official game (opens in a new tab)" target="_blank" rel="noopener noreferrer">Official game <span aria-hidden="true">↗</span></a
+                >
+              </div>
+            </div>
+          </article>
+          <article
+            class="experience-card"
+            id="counter-blox"
+            data-project="counter-blox"
+          >
+            <div class="game-art" data-project-visual>
+              <img
+                src="./assets/projects/counter-blox.png"
+                alt="Official Counter Blox artwork"
+                width="512"
+                height="512"
+                loading="lazy"
+              />
+            </div>
+            <div class="experience-content">
+              <span class="entry-number">Weapons &amp; economy</span>
+              <h3 data-project-title>Counter Blox</h3>
+              <h4 class="contribution-label">Gameplay</h4>
+              <p data-project-summary>
+                Worked on gun mechanics, gameplay rotation, and the game economy
+                system.
+              </p>
+              <div class="persistence-details">
+                <h4 class="contribution-label">DataStore</h4>
+                <p class="persistence-copy" data-detail="0">
+                  Worked with DataStore systems for persistent economy and
+                  inventory data.
+                </p>
+              </div>
+              <div class="technology-list" data-project-technologies>
+                <span>Lua / Roblox</span><span>DataStore</span>
+              </div>
+              <div class="project-links" data-project-links>
+                <a href="https://www.roblox.com/games/301549746/Counter-Blox"
+                   aria-label="Official game (opens in a new tab)" target="_blank" rel="noopener noreferrer">Official game <span aria-hidden="true">↗</span></a
+                >
+              </div>
+            </div>
+          </article>
+          <article
+            class="experience-card"
+            id="typical-colors-2"
+            data-project="typical-colors-2"
+          >
+            <div class="game-art" data-project-visual>
+              <img
+                src="./assets/projects/typical-colors-2.png"
+                alt="Official Typical Colors 2 artwork"
+                width="512"
+                height="512"
+                loading="lazy"
+              />
+            </div>
+            <div class="experience-content">
+              <span class="entry-number">Weapons &amp; class selection</span>
+              <h3 data-project-title>Typical Colors 2</h3>
+              <h4 class="contribution-label">Gameplay</h4>
+              <p data-project-summary>
+                Worked on gun mechanics, gameplay rotation, and class selection.
+              </p>
+              <div class="persistence-details">
+                <h4 class="contribution-label">DataStore</h4>
+                <p class="persistence-copy" data-detail="0">
+                  Worked on DataStore persistence for inventory, player stats,
+                  settings, and custom map builder data.
+                </p>
+              </div>
+              <div class="technology-list" data-project-technologies>
+                <span>Lua / Roblox</span><span>DataStore</span>
+              </div>
+              <div class="project-links" data-project-links>
+                <a
+                  href="https://www.roblox.com/games/328028363/Typical-Colors-2"
+                   aria-label="Official game (opens in a new tab)" target="_blank" rel="noopener noreferrer">Official game <span aria-hidden="true">↗</span></a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="print-page" id="print-skills">
+        <div class="section-header"><h2>Technical skills</h2></div>
+        <div class="skills-grid">
+          <section class="skill-group" data-skill-group="0">
+            <h3>Languages</h3>
+            <ul>
+              <li>Lua / Roblox</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>C#</li>
+              <li>HTML and CSS</li>
+            </ul>
+          </section>
+          <section class="skill-group" data-skill-group="1">
+            <h3>Web &amp; gameplay</h3>
+            <ul>
+              <li>Web development</li>
+              <li>Gameplay mechanics</li>
+              <li>Persistent data systems</li>
+            </ul>
+          </section>
+          <section class="skill-group" data-skill-group="2">
+            <h3>Server &amp; community</h3>
+            <ul>
+              <li>Game server plugins</li>
+              <li>CounterStrikeSharp</li>
+              <li>Discord bot development</li>
+            </ul>
+          </section>
+          <section class="skill-group" data-skill-group="3">
+            <h3>Tools &amp; collaboration</h3>
+            <ul>
+              <li>Git and GitHub</li>
+              <li>Work coordination</li>
+              <li>Team management</li>
+            </ul>
+          </section>
+        </div>
+        <div class="learning-section" data-learning hidden>
+          <h3>Currently learning</h3>
+          <ul></ul>
+        </div>
+        <div class="print-education">
+          <h2>Education</h2>
+          <p>
+            Computer Science, second year<br />University of Finance and
+            Economics (UFE / СЭЗИС), Mongolia
+          </p>
+        </div>
+        <h2>Contact</h2>
+        <div class="contact-links contact-list" data-contact-links>
+          <div class="contact-item">
+            <span class="contact-kind" data-contact-method="email">Email</span
+            ><a href="mailto:dorjsembe@1st.mn"
+              >dorjsembe@1st.mn <span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <div class="contact-item">
+            <span class="contact-kind" data-contact-method="discord">Discord</span>
+            <div class="discord-contact">
+              <span class="contact-value">@marigold669</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-kind" data-contact-method="phone">Phone</span
+            ><a href="tel:+97699129516"
+              >+976 9912 9516 <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+        <p data-contact-empty hidden></p>
+      </section>
+    </main>
+  </body>
+</html>

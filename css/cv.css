@@ -1,0 +1,134 @@
+/* Full-page CV previews share the portfolio's type, color, and navigation. */
+.cv-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  padding-block: 64px 48px;
+}
+.cv-intro .page-title {
+  margin-bottom: 0;
+}
+.cv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+}
+.cv-preview {
+  max-width: 864px;
+  padding-bottom: 64px;
+}
+.cv-page + .cv-page {
+  margin-top: 32px;
+}
+.cv-page figcaption {
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 16px;
+}
+.cv-sheet {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--white);
+  box-shadow: 0 8px 32px rgb(36 39 34 / 8%);
+}
+.cv-sheet img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 595.28 / 841.89;
+  object-fit: contain;
+}
+.cv-document-note {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 20px;
+}
+.cv-document-note a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 250ms var(--ease);
+}
+.cv-document-note a:hover {
+  color: var(--accent);
+}
+.cv-document-note a:active {
+  color: var(--ink);
+}
+body[data-page="cv"] .print-button[aria-current="page"] {
+  border-color: var(--ink);
+}
+@media (max-width: 700px) {
+  .cv-intro {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+    padding-block: 48px 32px;
+  }
+  .cv-intro .page-title {
+    font-size: 48px;
+    line-height: 1;
+    letter-spacing: -2px;
+  }
+  .cv-actions {
+    gap: 12px 24px;
+  }
+  .cv-preview {
+    padding-bottom: 48px;
+  }
+  .cv-page + .cv-page {
+    margin-top: 24px;
+  }
+  .cv-sheet {
+    box-shadow: none;
+  }
+}
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  body[data-page="cv"] {
+    background: #fff;
+  }
+  body[data-page="cv"] .site-header,
+  body[data-page="cv"] .site-footer,
+  .cv-intro,
+  .cv-document-note,
+  .cv-page figcaption {
+    display: none;
+  }
+  .cv-preview {
+    width: 210mm;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+  .cv-page,
+  .cv-page + .cv-page {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    break-after: page;
+  }
+  .cv-page:last-of-type {
+    break-after: auto;
+  }
+  .cv-sheet {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .cv-sheet img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

@@ -1,0 +1,6 @@
+.DS_Store
+output/
+tmp/
+.env
+.env.*
+!.env.example

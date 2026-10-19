@@ -1,0 +1,880 @@
+/* This document is also a readable web preview of the native print layout. */
+body[data-page="print"] {
+  color: #202320;
+  background: #f0efeb;
+}
+.print-toolbar {
+  width: min(100% - 40px, 900px);
+  margin: 24px auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 14px;
+}
+.print-toolbar button {
+  min-height: 44px;
+  padding: 10px 18px;
+  color: #fff;
+  background: #242722;
+  border: 1px solid #242722;
+  border-radius: 6px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.print-toolbar a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+.print-toolbar :focus-visible {
+  outline: 2px solid #b7472a;
+  outline-offset: 4px;
+}
+.print-document {
+  width: min(100% - 40px, 900px);
+  margin: 32px auto;
+  font-family: Manrope, sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+}
+.print-document *,
+.print-document *::before,
+.print-document *::after {
+  box-sizing: border-box;
+}
+.print-document .print-page {
+  min-height: 0;
+  margin: 0 0 32px;
+  padding: 48px;
+  background: #fff;
+  border: 1px solid #d8d8d0;
+}
+.print-document h1,
+.print-document h2,
+.print-document h3,
+.print-document h4,
+.print-document p,
+.print-document ul,
+.print-document ol,
+.print-document figure {
+  margin: 0;
+}
+.print-document h1,
+.print-document h2,
+.print-document h3,
+.print-document h4 {
+  color: #202320;
+  font-weight: 650;
+  text-wrap: balance;
+}
+.print-document h1 {
+  max-width: none;
+  background: none;
+  color: #202320;
+  font-size: clamp(40px, 7vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+  -webkit-text-fill-color: currentColor;
+}
+.print-document h2 {
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+.print-document h3 {
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+.print-document h4 {
+  font-size: 16px;
+  line-height: 1.3;
+}
+.print-document a {
+  color: inherit;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+.print-document .eyebrow {
+  color: #575b52;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.print-document .print-heading {
+  padding-bottom: 28px;
+  border-bottom: 1px solid #b9bcb3;
+}
+.print-document .print-heading h1 {
+  margin-top: 12px;
+}
+.print-document [data-profile-full-name] {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #575b52;
+}
+.print-document .profile-alias {
+  margin: 8px 0 0;
+  color: #575b52;
+  font-size: 10pt;
+  line-height: 1.4;
+}
+.print-document .profile-alias [data-profile-alias] {
+  color: inherit;
+}
+.print-document .print-role {
+  margin-top: 16px;
+  font-size: 18px;
+}
+.print-document .print-email {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 14px;
+}
+.print-document .print-intro {
+  max-width: 650px;
+  margin: 40px 0;
+  font-size: 19px;
+  line-height: 1.55;
+  color: #454940;
+}
+.print-document #print-profile > h2 {
+  font-size: 24px;
+}
+.print-document .print-project-index {
+  margin-top: 16px;
+  padding: 0;
+}
+.print-document .print-project-index > section {
+  padding: 20px 0;
+  border-top: 1px solid #d8d8d0;
+}
+.print-document .print-project-index h2 {
+  margin-bottom: 6px;
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+.print-document .print-project-index p {
+  color: #454940;
+}
+.print-document .section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.print-document .section-header h2 {
+  margin-top: 8px;
+}
+.print-document .section-note {
+  color: #575b52;
+  font-size: 12px;
+}
+.print-document .project-case {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: #fff;
+}
+.print-document .featured-project {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 0;
+  border: 1px solid #c7c9c1;
+  border-radius: 0;
+  overflow: visible;
+}
+.print-document .project-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 0;
+  padding: 24px;
+  border-right: 1px solid #c7c9c1;
+  border-radius: 0;
+  background: #fff;
+}
+.print-document .project-logo {
+  display: block;
+  max-width: 100%;
+  width: 190px;
+  height: auto;
+  padding: 0;
+  max-height: 90px;
+  object-fit: contain;
+  filter: grayscale(1) brightness(0);
+}
+.print-document .first-mn-visual {
+  position: static;
+  aspect-ratio: auto;
+  overflow: hidden;
+}
+.print-document .first-mn-visual .project-logo {
+  position: static !important;
+  inset: auto !important;
+  width: 100%;
+  height: 120px;
+  max-height: 120px;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+  filter: grayscale(1) invert(1);
+}
+.print-document .first-mn-visual .eyebrow,
+.print-document .first-mn-visual .asset-placeholder {
+  display: none;
+}
+.print-document .project-visual p {
+  margin-top: 16px;
+  color: #575b52;
+  font-size: 12px;
+}
+.print-document .project-overview {
+  padding: 24px;
+}
+.print-document .project-overview h2,
+.print-document .project-overview h3 {
+  margin: 0 0 12px;
+}
+.print-document .project-overview p {
+  color: #454940;
+}
+.print-document .project-overview .eyebrow {
+  margin-bottom: 12px;
+  font-size: 11px;
+}
+.print-document .asset-placeholder {
+  display: block;
+  margin-top: 12px;
+  padding: 0;
+  color: #575b52;
+  font-size: 11px;
+  line-height: 1.35;
+}
+.print-document .project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 16px;
+  font-size: 13px;
+}
+.print-document .technology-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+.print-document .technology-list span {
+  padding: 3px 6px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #454940;
+  border: 1px solid #c7c9c1;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.print-document summary {
+  color: #202320;
+  font-weight: 600;
+}
+
+.print-document .experience-grid {
+  display: block;
+}
+.print-document .experience-card {
+  display: block;
+  min-height: 0;
+  margin-bottom: 24px;
+  padding: 24px;
+  border: 1px solid #c7c9c1;
+  border-radius: 0;
+  background: #fff;
+}
+.print-document .experience-card:last-child {
+  margin-bottom: 0;
+}
+.print-document .game-art {
+  display: none;
+}
+.print-document .experience-content {
+  min-width: 0;
+  padding: 0;
+}
+.print-document .entry-number {
+  display: block;
+  margin-bottom: 6px;
+  color: #575b52;
+  font-size: 11px;
+}
+.print-document .experience-card h3 {
+  margin: 0 0 12px;
+}
+.print-document .experience-card p {
+  color: #454940;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.print-document .skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 32px;
+  margin-top: 28px;
+}
+.print-document .skill-group {
+  min-width: 0;
+  padding: 0 0 20px;
+  border: 0;
+  border-bottom: 1px solid #c7c9c1;
+  border-radius: 0;
+  background: #fff;
+}
+.print-document .skill-group h3 {
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+.print-document .skill-group ul {
+  padding-left: 18px;
+}
+.print-document .skill-group li {
+  color: #454940;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.print-document .skill-note,
+.print-document .skill-status {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #575b52;
+}
+.print-document .learning-section:not([hidden]) {
+  display: block;
+  margin-top: 28px;
+}
+.print-document .learning-section h3 {
+  margin-bottom: 12px;
+  font-size: 17px;
+}
+.print-document .learning-section ul {
+  padding-left: 18px;
+}
+.print-document .learning-note {
+  margin-top: 28px;
+  color: #454940;
+}
+.print-document .print-education {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid #b9bcb3;
+}
+.print-document .print-education h2,
+.print-document .print-education h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.print-document .print-education p {
+  color: #454940;
+}
+.print-document .print-education + h2 {
+  margin-top: 32px;
+  font-size: 24px;
+}
+.print-document .contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 28px;
+  padding: 0;
+  list-style: none;
+  font-size: 15px;
+}
+.print-document .contact-links a {
+  overflow-wrap: anywhere;
+}
+
+@media screen and (max-width: 600px) {
+  .print-document {
+    width: calc(100% - 24px);
+    margin: 24px auto;
+  }
+  .print-document .print-page {
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  .print-toolbar {
+    width: calc(100% - 32px);
+  }
+  .print-document .print-intro {
+    margin-block: 28px;
+    font-size: 17px;
+  }
+  .print-document .section-header {
+    display: block;
+  }
+  .print-document .section-note {
+    display: block;
+    margin-top: 12px;
+  }
+  .print-document .featured-project,
+  .print-document .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .print-document .project-visual {
+    border-right: 0;
+    border-bottom: 1px solid #c7c9c1;
+  }
+  .print-document .experience-card {
+    padding: 20px;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 16mm;
+}
+
+.print-document .contribution-label {
+  margin: 12px 0 6px;
+  color: #202320;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.print-document .persistence-copy {
+  font-size: 15px;
+  line-height: 1.4;
+  color: #454940;
+}
+
+@media print {
+  .print-document .contact-item {
+    display: grid;
+    grid-template-columns: 20mm minmax(0, 1fr);
+    gap: 3mm;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+  }
+  .print-document .contact-kind,
+  .print-document .contact-value,
+  .print-document .contact-item a {
+    font-size: 10pt;
+    line-height: 1.4;
+    color: #333;
+    letter-spacing: 0;
+  }
+  .print-document .contact-feedback,
+  .print-document .copy-handle,
+  .print-document .contact-item a > [aria-hidden] {
+    display: none !important;
+  }
+  .print-document .contact-item a,
+  .print-document .discord-contact {
+    min-height: 0;
+  }
+  .print-document .contribution-label {
+    margin: 2mm 0 1mm;
+    font-size: 10pt;
+    line-height: 1.3;
+  }
+  .print-document .persistence-copy {
+    font-size: 11pt;
+    line-height: 1.4;
+    color: #333;
+  }
+  :root {
+    --paper: #fff;
+    --white: #fff;
+    --surface: #fff;
+    --ink: #161616;
+    --muted: #454545;
+    --accent: #333;
+    --line: #bbb;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  body,
+  body[data-page="print"] {
+    margin: 0;
+    color: #161616;
+    background: #fff;
+    font-size: 12pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  .screen-only,
+  .js-only,
+  .site-header,
+  .site-footer,
+  .skip-link,
+  nav,
+  .print-toolbar,
+  button,
+  .button,
+  [hidden] {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .reveal,
+  [data-reveal] {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  .print-document {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    color: #161616;
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  .print-document .print-page {
+    display: block;
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: #fff;
+    break-before: page;
+    page-break-before: always;
+  }
+  .print-document .print-page:first-child {
+    break-before: auto;
+    page-break-before: auto;
+  }
+  .print-document h1,
+  .print-document h2,
+  .print-document h3,
+  .print-document h4,
+  .print-document summary {
+    color: #161616;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  .print-document p,
+  .print-document li {
+    orphans: 3;
+    widows: 3;
+  }
+  .print-document a {
+    color: #161616;
+    text-decoration: underline;
+    text-underline-offset: 2pt;
+  }
+  .print-document a[href^="#"] {
+    text-decoration: none;
+  }
+  .print-document .eyebrow {
+    color: #454545;
+    font-size: 8.5pt;
+    line-height: 1.3;
+    letter-spacing: 0.7pt;
+  }
+  .print-document .print-heading {
+    padding-bottom: 8mm;
+  }
+  .print-document .print-heading h1 {
+    margin-top: 3mm;
+  }
+  .print-document [data-profile-full-name] {
+    margin-top: 2mm;
+    font-size: 11pt;
+    color: #454545;
+  }
+  .print-document h1 {
+    font-size: 44pt;
+    line-height: 1.05;
+    letter-spacing: -2pt;
+  }
+  .print-document .print-role {
+    margin-top: 4mm;
+    font-size: 14pt;
+    line-height: 1.35;
+  }
+  .print-document .print-email {
+    margin-top: 4mm;
+    font-size: 11pt;
+  }
+  .print-document .print-intro {
+    max-width: 155mm;
+    margin: 12mm 0 9mm;
+    font-size: 14pt;
+    line-height: 1.5;
+    color: #333;
+  }
+  .print-document #print-profile > h2 {
+    font-size: 18pt;
+  }
+  .print-document .print-project-index {
+    margin-top: 4mm;
+  }
+  .print-document .print-project-index > section {
+    padding: 5mm 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .print-document .print-project-index h2 {
+    margin-bottom: 2mm;
+    font-size: 13pt;
+  }
+  .print-document .print-project-index p {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #333;
+  }
+  .print-document .section-header {
+    display: flex;
+    gap: 5mm;
+    margin-bottom: 6mm;
+  }
+  .print-document h2 {
+    margin: 0;
+    font-size: 24pt;
+    line-height: 1.1;
+    letter-spacing: -0.8pt;
+  }
+  .print-document .section-header h2 {
+    margin-top: 3mm;
+  }
+  .print-document .section-note {
+    display: block;
+    color: #454545;
+    font-size: 8.5pt;
+  }
+  .print-document .featured-project {
+    grid-template-columns: 0.7fr 1.3fr;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .print-document .project-visual,
+  .print-document .project-overview {
+    min-height: 0;
+    padding: 5mm;
+  }
+  .print-document .first-mn-visual .project-logo {
+    position: static !important;
+    inset: auto !important;
+    width: 100%;
+    height: 30mm;
+    max-width: 100%;
+    max-height: 30mm;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+    filter: grayscale(1) invert(1);
+  }
+  .print-document .project-visual p {
+    margin-top: 3mm;
+    font-size: 9pt;
+    line-height: 1.35;
+    color: #454545;
+  }
+  .print-document .project-overview h2,
+  .print-document .project-overview h3 {
+    margin: 0 0 3mm;
+    font-size: 21pt;
+    line-height: 1.15;
+  }
+  .print-document .project-overview p {
+    font-size: 11pt;
+    line-height: 1.4;
+    color: #333;
+  }
+  .print-document .project-overview .eyebrow {
+    margin-bottom: 3mm;
+    font-size: 8.5pt;
+  }
+  .print-document .asset-placeholder {
+    margin-top: 3mm;
+    font-size: 8.5pt;
+    color: #555;
+  }
+  .print-document .responsibility-list {
+    display: block;
+    margin: 4mm 0;
+    padding-left: 5mm;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+  .print-document .project-links {
+    gap: 2mm 5mm;
+    margin-top: 3mm;
+    font-size: 9pt;
+    line-height: 1.35;
+  }
+  .print-document .project-links a {
+    display: inline;
+    min-height: 0;
+    padding: 0;
+    font-size: 9pt;
+    line-height: 1.35;
+  }
+  .print-document .technology-list {
+    gap: 1.5mm;
+    margin-top: 3mm;
+  }
+  .print-document .technology-list span {
+    padding: 1mm 2mm;
+    font-size: 8.5pt;
+    line-height: 1.3;
+    border-radius: 0;
+    color: #333;
+  }
+  .print-document details {
+    display: block;
+  }
+  .print-document details > :not(summary) {
+    display: block !important;
+  }
+  .print-document details::details-content {
+    display: block;
+    content-visibility: visible;
+    height: auto;
+  }
+  .print-document details > summary {
+    display: block;
+    list-style: none;
+    cursor: default;
+  }
+  .print-document details > summary::-webkit-details-marker {
+    display: none;
+  }
+  .print-document details > summary::after {
+    display: none !important;
+  }
+
+  .print-document .game-art {
+    display: none !important;
+  }
+  .print-document .experience-card {
+    display: block;
+    min-height: 0;
+    margin-bottom: 5mm;
+    padding: 4.5mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .print-document .experience-card:last-child {
+    margin-bottom: 0;
+  }
+  .print-document .entry-number {
+    margin-bottom: 1mm;
+    font-size: 8.5pt;
+    color: #454545;
+  }
+  .print-document .experience-card h3 {
+    margin: 0 0 3mm;
+    font-size: 17pt;
+    line-height: 1.2;
+    letter-spacing: -0.4pt;
+  }
+  .print-document .experience-card p {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #333;
+  }
+
+  .print-document .skills-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6mm 8mm;
+    margin-top: 7mm;
+  }
+  .print-document .skill-group {
+    padding-bottom: 4mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .print-document .skill-group h3 {
+    margin-bottom: 2mm;
+    font-size: 12pt;
+    line-height: 1.3;
+  }
+  .print-document .skill-group ul {
+    display: block;
+    padding-left: 4mm;
+    list-style: disc;
+  }
+  .print-document .skill-group li + li {
+    margin-top: 1mm;
+  }
+  .print-document .skill-group li {
+    font-size: 11pt;
+    line-height: 1.45;
+    color: #333;
+  }
+  .print-document .skill-note,
+  .print-document .skill-status {
+    margin-top: 3mm;
+    font-size: 9pt;
+    color: #555;
+  }
+  .print-document .learning-section:not([hidden]) {
+    margin-top: 6mm;
+  }
+  .print-document .learning-section h3 {
+    margin-bottom: 3mm;
+    font-size: 12pt;
+  }
+  .print-document .learning-section li {
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+  .print-document .learning-note {
+    margin-top: 6mm;
+    color: #333;
+    font-size: 11pt;
+  }
+  .print-document .print-education {
+    margin-top: 10mm;
+    padding-top: 6mm;
+    break-inside: avoid;
+  }
+  .print-document .print-education h2,
+  .print-document .print-education h3 {
+    margin-bottom: 3mm;
+    font-size: 15pt;
+  }
+  .print-document .print-education p {
+    font-size: 11pt;
+    line-height: 1.4;
+    color: #333;
+  }
+  .print-document .print-education + h2 {
+    margin-top: 8mm;
+    font-size: 18pt;
+  }
+  .print-document .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3mm 6mm;
+    margin-top: 8mm;
+    font-size: 11pt;
+  }
+  .print-document .contact-links a {
+    overflow-wrap: anywhere;
+  }
+}
