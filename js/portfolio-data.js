@@ -40,7 +40,71 @@ window.portfolioData = {
       screenshot: "./assets/projects/arsenal-rolve.png",
       screenshotAlt:
         "Official Arsenal artwork from ROLVe, featuring the Arsenal wordmark and a Roblox character.",
-      evidence: [],
+      evidence: [
+        {
+          src: "./assets/projects/evidence/arsenal-weapon-gameplay.webp",
+          thumbnail:
+            "./assets/projects/evidence/arsenal-weapon-gameplay-thumb.webp",
+          width: 2880,
+          height: 1800,
+          alt: "Arsenal first-person gameplay with a G-18 equipped and the match HUD visible.",
+          caption:
+            "First-person weapon gameplay with the match HUD and ammunition display.",
+          topics: ["arsenal-weapons", "arsenal-gun-game"],
+        },
+        {
+          src: "./assets/projects/evidence/arsenal-weapon-firing.webp",
+          thumbnail:
+            "./assets/projects/evidence/arsenal-weapon-firing-thumb.webp",
+          width: 2880,
+          height: 1800,
+          alt: "Arsenal first-person gameplay showing a G-18 firing with a visible muzzle flash.",
+          caption: "Weapon firing during a Standard match.",
+          topics: ["arsenal-weapons"],
+        },
+        {
+          src: "./assets/projects/evidence/arsenal-monthly-contracts.webp",
+          thumbnail:
+            "./assets/projects/evidence/arsenal-monthly-contracts-thumb.webp",
+          width: 2880,
+          height: 1800,
+          alt: "Arsenal main menu showing monthly contracts and daily challenge progress.",
+          caption:
+            "Monthly contracts and daily challenge progress in the main menu.",
+          topics: ["arsenal-progression"],
+        },
+        {
+          src: "./assets/projects/evidence/arsenal-locker-loadout.webp",
+          thumbnail:
+            "./assets/projects/evidence/arsenal-locker-loadout-thumb.webp",
+          width: 2880,
+          height: 1800,
+          alt: "Arsenal locker showing the character loadout, emotes, melee item, and weapon skin.",
+          caption:
+            "Locker overview with the equipped character, emotes, and cosmetic items.",
+          topics: ["arsenal-datastore"],
+        },
+        {
+          src: "./assets/projects/evidence/arsenal-character-inventory.webp",
+          thumbnail:
+            "./assets/projects/evidence/arsenal-character-inventory-thumb.webp",
+          width: 2880,
+          height: 1800,
+          alt: "Arsenal character inventory with a search field and a paginated grid of character items.",
+          caption: "Character inventory with search and page navigation.",
+          topics: ["arsenal-datastore"],
+        },
+        {
+          src: "./assets/projects/evidence/arsenal-player-statistics.webp",
+          thumbnail:
+            "./assets/projects/evidence/arsenal-player-statistics-thumb.webp",
+          width: 2878,
+          height: 1372,
+          alt: "Arsenal player statistics screen alongside a calling card and favorite items.",
+          caption: "Player statistics, calling card, and favorite items.",
+          topics: ["arsenal-datastore"],
+        },
+      ],
       referenceUrl: "https://www.roblox.com/games/286090429/Arsenal",
       referenceLabel: "Official game",
       details: [
@@ -62,7 +126,52 @@ window.portfolioData = {
       screenshot: "./assets/projects/counter-blox.png",
       screenshotAlt:
         "Official Counter Blox artwork and wordmark from its Roblox experience page.",
-      evidence: [],
+      evidence: [
+        {
+          src: "./assets/projects/evidence/counter-blox-weapon-gameplay.webp",
+          thumbnail:
+            "./assets/projects/evidence/counter-blox-weapon-gameplay-thumb.webp",
+          width: 2880,
+          height: 1800,
+          alt: "Counter Blox first-person gameplay with a red-and-white rifle and the match HUD visible.",
+          caption:
+            "First-person weapon gameplay with the radar, round timer, and ammunition display.",
+          topics: ["counter-blox-weapons"],
+        },
+        {
+          src: "./assets/projects/evidence/counter-blox-weapon-buy-menu.webp",
+          thumbnail:
+            "./assets/projects/evidence/counter-blox-weapon-buy-menu-thumb.webp",
+          width: 2880,
+          height: 1800,
+          alt: "Counter Blox weapon buy menu with a radial category selector and pistol options.",
+          caption:
+            "Weapon buy menu with category selection, pistol options, and buy-time countdown.",
+          topics: ["counter-blox-weapons"],
+        },
+        {
+          src: "./assets/projects/evidence/counter-blox-pistol-inventory.webp",
+          thumbnail:
+            "./assets/projects/evidence/counter-blox-pistol-inventory-thumb.webp",
+          width: 2880,
+          height: 1800,
+          alt: "Counter Blox pistol inventory with loadout slots, item search, and a grid of weapon skins.",
+          caption:
+            "Pistol inventory with loadout slots, item search, and weapon skins.",
+          topics: ["counter-blox-datastore"],
+        },
+        {
+          src: "./assets/projects/evidence/counter-blox-equipment-inventory.webp",
+          thumbnail:
+            "./assets/projects/evidence/counter-blox-equipment-inventory-thumb.webp",
+          width: 2880,
+          height: 1800,
+          alt: "Counter Blox equipment inventory showing knives and gloves beside the selected loadout.",
+          caption:
+            "Equipment inventory showing knives, gloves, and the selected loadout.",
+          topics: ["counter-blox-datastore"],
+        },
+      ],
       referenceUrl: "https://www.roblox.com/games/301549746/Counter-Blox",
       referenceLabel: "Official game",
       details: [
@@ -84,7 +193,65 @@ window.portfolioData = {
       screenshot: "./assets/projects/typical-colors-2.png",
       screenshotAlt:
         "Official Typical Colors 2 artwork and wordmark from its Roblox experience page.",
-      evidence: [],
+      evidence: [
+        {
+          src: "./assets/projects/evidence/typical-colors-2-class-selection.webp",
+          thumbnail:
+            "./assets/projects/evidence/typical-colors-2-class-selection-thumb.webp",
+          width: 2880,
+          height: 1800,
+          alt: "Typical Colors 2 class selection menu with nine class choices, a character preview, and the current loadout.",
+          caption:
+            "Class selection menu with character preview and the current loadout.",
+          topics: ["typical-colors-2-playerclass"],
+        },
+        {
+          src: "./assets/projects/evidence/typical-colors-2-class-loadout.webp",
+          thumbnail:
+            "./assets/projects/evidence/typical-colors-2-class-loadout-thumb.webp",
+          width: 2880,
+          height: 1800,
+          alt: "Typical Colors 2 Agent loadout screen with equipment, cosmetic items, and multiple loadout slots.",
+          caption:
+            "Agent equipment and cosmetic choices with multiple loadout slots.",
+          topics: [
+            "typical-colors-2-playerclass",
+            "typical-colors-2-datastore",
+          ],
+        },
+        {
+          src: "./assets/projects/evidence/typical-colors-2-weapon-gameplay.webp",
+          thumbnail:
+            "./assets/projects/evidence/typical-colors-2-weapon-gameplay-thumb.webp",
+          width: 2880,
+          height: 1800,
+          alt: "Typical Colors 2 first-person shotgun gameplay with health, ammunition, objective progress, and daily contracts visible.",
+          caption:
+            "First-person shotgun gameplay with the match HUD and daily contracts.",
+          topics: ["typical-colors-2-rotation"],
+        },
+        {
+          src: "./assets/projects/evidence/typical-colors-2-melee-gameplay.webp",
+          thumbnail:
+            "./assets/projects/evidence/typical-colors-2-melee-gameplay-thumb.webp",
+          width: 2880,
+          height: 1800,
+          alt: "Typical Colors 2 first-person gameplay with a fish melee weapon equipped beside a green-team character.",
+          caption:
+            "First-person melee gameplay with equipment selection and daily contracts visible.",
+          topics: ["typical-colors-2-rotation"],
+        },
+        {
+          src: "./assets/projects/evidence/typical-colors-2-scoreboard-map-vote.webp",
+          thumbnail:
+            "./assets/projects/evidence/typical-colors-2-scoreboard-map-vote-thumb.webp",
+          width: 2880,
+          height: 1800,
+          alt: "Typical Colors 2 end-of-round scoreboard for GRN and RED with a vote for the next map.",
+          caption: "Team scoreboard and voting options for the next map.",
+          topics: ["typical-colors-2-rotation"],
+        },
+      ],
       referenceUrl: "https://www.roblox.com/games/328028363/Typical-Colors-2",
       referenceLabel: "Official game",
       details: [

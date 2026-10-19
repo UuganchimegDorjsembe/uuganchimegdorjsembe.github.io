@@ -162,6 +162,10 @@ body[data-page="project"]
   flex-direction: column;
   gap: 8px;
 }
+.is-enhanced .system-tabs {
+  position: sticky;
+  top: 24px;
+}
 .system-tabs a {
   display: flex;
   align-items: center;
@@ -195,10 +199,19 @@ body[data-page="project"]
 .system-panels {
   min-width: 0;
 }
+.system-evidence {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
 .system-panel {
   min-height: 280px;
   padding: 32px;
   scroll-margin-top: 32px;
+}
+.system-panel:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
 }
 .system-panel + .system-panel {
   border-top: 1px solid var(--line);
@@ -305,7 +318,11 @@ body[data-page="project"]
   line-height: 20px;
 }
 .evidence-image-button {
-  display: block;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: 680px;
   overflow: hidden;
   border-radius: 8px;
   background: var(--ink);
@@ -313,6 +330,8 @@ body[data-page="project"]
 }
 .evidence-image-button img {
   width: 100%;
+  height: 100%;
+  min-height: 0;
   max-height: 680px;
   object-fit: contain;
 }
@@ -329,6 +348,9 @@ body[data-page="project"]
   color: var(--muted);
   font-size: 14px;
   line-height: 20px;
+}
+.evidence-frame + .evidence-frame {
+  margin-top: 32px;
 }
 .gallery-controls,
 .gallery-steps,
@@ -479,6 +501,9 @@ body[data-page="project"]
     flex-direction: row;
     flex-wrap: wrap;
     gap: 4px;
+  }
+  .is-enhanced .system-tabs {
+    position: static;
   }
   .system-tabs a {
     flex: 1 1 calc(50% - 4px);

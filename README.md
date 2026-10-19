@@ -25,7 +25,7 @@ The public display name is **Dorjsembe**, the full name is **Uuganchimeg Dorjsem
 | `js/main.js`                | Progressive content enhancement, contact configuration, mobile-menu behavior, and native printing.             |
 | `js/project-pages.js`       | Progressive topic tabs, category filters, and optional evidence carousel and image zoom.                       |
 | `assets/projects/`          | Official project artwork and logo with source documentation.                                                   |
-| `assets/projects/evidence/` | Destination for future authentic contribution screenshots, separate from official artwork.                     |
+| `assets/projects/evidence/` | Fifteen supplied in-game screenshots across the three Roblox projects, plus small thumbnails.                  |
 | `assets/profile/avatar.jpg` | Supplied profile picture, used in screen headers and the About profile card.                                   |
 | `assets/cv/`                | Public CV PDF and its two locally rendered full-page preview PNGs.                                             |
 | `assets/icons/languages/`   | Eight local Devicon SVGs: six language/web icons plus Git and GitHub.                                          |
@@ -78,7 +78,7 @@ window.portfolioData = {
       technologies: [],
       screenshot: "",
       screenshotAlt: "",
-      evidence: [], // Optional authentic images: { src, alt, caption }.
+      evidence: [], // { src, alt, caption }; optional topics, thumbnail, width, height.
       referenceUrl: "",
       referenceLabel: "",
       details: [{ heading: "", text: "" }],
@@ -92,7 +92,7 @@ window.portfolioData = {
 
 This example documents the schema; preserve the real project entries when editing. Keep valid JavaScript syntax, including quotation marks, commas, and matching brackets.
 
-- A project's `id` matches its HTML `data-project` value and `data-evidence-gallery` value. The current IDs are `first-mn`, `arsenal`, `counter-blox`, and `typical-colors-2`. `page` holds the relative detail-page URL; mirror that URL in static card, title, and navigation anchors.
+- A project's `id` matches its HTML `data-project` value and the `data-evidence-gallery` values inside its topic panels. The current IDs are `first-mn`, `arsenal`, `counter-blox`, and `typical-colors-2`. `page` holds the relative detail-page URL; mirror that URL in static card, title, and navigation anchors. Evidence `topics` map images to full panel IDs, matching each wrapper's `data-evidence-topic`.
 - `data-project-title`, `data-project-summary`, `data-project-technologies`, and numbered `data-detail` elements receive the corresponding data. `homeSummary` optionally supplies shorter gallery and print-index copy. Add or update the static HTML counterpart whenever changing essential content.
 - `first-mn` has an empty `details` array. Each game's `details[0]` retains `heading: "DataStore"` and its confirmed per-game persistence categories, supporting both detail pages and the print document. Contribution topic panels are authored directly in each detail page; they are not generated from this array.
 - `data-skill-group="0"` corresponds to the first `skills` item, `1` to the second, and so on. Add or reorder both representations together.
@@ -124,7 +124,7 @@ Contact labels use local email, Discord, and phone SVG icons. Their `data-contac
 
 `projects.html` is a compact directory with category filters and links to four separate project pages. The filters appear only when JavaScript is available; all cards remain visible without scripts. Keep `data-project-filters`, `data-project-filter`, `data-project-category`, and the live `data-filter-status` hooks aligned when changing categories.
 
-Each detail page contains a short overview, role, technology tags, official reference, contribution topic panels, a native engineering-takeaway disclosure, an evidence area, and project navigation:
+Each detail page contains a short overview, role, technology tags, official reference, contribution topic panels, a native engineering-takeaway disclosure, and project navigation. Supplied screenshots appear inside the related topic panels:
 
 | Detail page             | Contribution topics                                                                                           | Confirmed DataStore categories                                |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
@@ -137,27 +137,49 @@ The Roblox work is described as contributions within development teams. The appr
 
 The contribution navigation starts as real anchors inside `data-system-explorer`, using `data-system-tabs` and `data-system-tab` to target section IDs. `project-pages.js` progressively adds tab/tablist/tabpanel roles, selected state, and one visible panel. Arrow keys move between topics; Home and End select the first and last. The selected topic updates the URL hash, and direct hash links select the matching panel. With JavaScript disabled, every panel remains visible and the same links act as ordinary in-page anchors. Preserve those IDs and hooks when editing content. The native engineering `<details>` remains usable without JavaScript.
 
-#### Add authentic development evidence
+#### Gameplay images and future development evidence
 
-No development screenshots have been supplied yet. Each detail page therefore has a clearly labeled static placeholder describing the intended evidence. Its caption is a request for future evidence, not proof that a system or code is visible. Official artwork stays separate from these placeholders.
+The three Roblox projects contain fifteen user-supplied in-game screenshots inside their “Explore the systems” panels. Arsenal has six: weapon gameplay, weapon firing, monthly contracts, locker/loadout, character inventory, and player statistics. Counter Blox has four: weapon gameplay, the weapon buy menu, pistol inventory, and equipment inventory. Typical Colors 2 has five: class selection, Agent loadout, shotgun gameplay, melee gameplay, and scoreboard/map voting. Captions describe the visible scene or UI; they do not establish interface authorship, source-code architecture, or a persistence implementation. In-game statistics are not development metrics.
 
-Place supplied images in `assets/projects/evidence/` using simple filenames such as `arsenal-studio.webp`. Add entries to the matching project's `evidence` array:
+The public assets are full-resolution sRGB WebP exports plus 192px-wide thumbnails in `assets/projects/evidence/`. Files use a project prefix (`arsenal-`, `counter-blox-`, or `typical-colors-2-`) followed by the visible subject. Full images end in `.webp` and thumbnails in `-thumb.webp`. The evidence folder's README lists all fifteen images. Original PNG screenshots remain outside the repository; derived exports omit source screenshot metadata.
+
+1sT.MN has no supplied screenshots yet. Counter Blox's redemption and trading topics also have no images. These panels remain text-only. There are no separate gallery sections or pending-image placeholders. Development-environment and source-code evidence remain optional future additions; official artwork continues to identify the project separately.
+
+The current panel mappings are:
+
+| Images                                                                 | Topic panel IDs                                              |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------ |
+| Arsenal weapon gameplay                                                | `arsenal-weapons`, `arsenal-gun-game`                        |
+| Arsenal weapon firing                                                  | `arsenal-weapons`                                            |
+| Arsenal monthly contracts                                              | `arsenal-progression`                                        |
+| Arsenal locker/loadout, character inventory, player statistics         | `arsenal-datastore`                                          |
+| Counter Blox gameplay and buy menu                                     | `counter-blox-weapons`                                       |
+| Counter Blox pistol and equipment inventories                          | `counter-blox-datastore`                                     |
+| Typical Colors 2 class selection                                       | `typical-colors-2-playerclass`                               |
+| Typical Colors 2 class loadout                                         | `typical-colors-2-playerclass`, `typical-colors-2-datastore` |
+| Typical Colors 2 shotgun gameplay, melee gameplay, scoreboard/map vote | `typical-colors-2-rotation`                                  |
+
+Add image entries to the matching project's `evidence` array. A full entry can include:
 
 ```js
 evidence: [
   {
-    src: "./assets/projects/evidence/arsenal-studio.webp",
-    alt: "Describe the actual development view supplied by the author.",
-    caption: "State what is visible and how the author contributed.",
+    src: "./assets/projects/evidence/arsenal-weapon-gameplay.webp",
+    thumbnail: "./assets/projects/evidence/arsenal-weapon-gameplay-thumb.webp",
+    width: 2880,
+    height: 1800,
+    topics: ["arsenal-weapons", "arsenal-gun-game"],
+    alt: "First-person gameplay in Arsenal with an equipped weapon.",
+    caption: "An in-game Arsenal scene showing the equipped weapon.",
   },
 ],
 ```
 
-This is an editing example, not a shipped image path. Use existing local PNG, JPEG, WebP, GIF, or AVIF files, a nonempty descriptive `alt`, and a caption grounded in the actual image. Keep unavailable arrays empty. Do not replace the `screenshot` identity artwork field with evidence: `evidence` is the gallery source, while `screenshot` and `screenshotAlt` continue to identify the project visual.
+Use existing local PNG, JPEG, WebP, GIF, or AVIF files, a nonempty descriptive `alt`, and a caption grounded in the actual image. Optional `topics` contains full panel IDs without `#`; set it for images used in topic panels. `thumbnail`, `width`, and `height` are also optional; thumbnails fall back to `src`, and supplied dimensions should match the full image. Keep unavailable arrays empty. `evidence` supplies the panel images, while `screenshot` and `screenshotAlt` continue to identify the official project visual.
 
-With valid entries, the script replaces the matching `data-evidence-gallery` placeholder with an image, caption, image-count status, Previous/Next controls, and thumbnails when there is more than one image. A failed image displays an unavailable message. Buttons and thumbnail selections support normal keyboard activation. Selecting the main image opens a native `<dialog>` when supported; Escape, Close, or clicking its backdrop dismisses it and focus returns to the image link. Left and Right move between images in the dialog. If the browser lacks native modal support, the image link opens the original local image in a new tab.
+Each panel's image wrapper uses `class="system-evidence"`, `data-evidence-gallery="project-id"`, and `data-evidence-topic="full-panel-id"`. The script filters the project's images by the matching `topics` entry, then enhances that wrapper with an image, caption, count status, Previous/Next controls, and thumbnails for multiple images. A failed image displays an unavailable message. Buttons and thumbnail selections support normal keyboard activation. Selecting the main image opens a native `<dialog>` when supported; Escape, Close, or clicking its backdrop dismisses it and focus returns to the image link. The dialog has Previous/Next buttons for touch or keyboard use, Left/Right navigation, and an “Open full-size image” new-tab link. Modified clicks retain normal browser link behavior. Without native modal support, the image link opens the full local image in a new tab.
 
-For supplied screenshots to remain available without JavaScript, also replace the placeholder in the corresponding detail HTML with real static figures containing the local image, descriptive alt text, caption, and an original-image link with `target="_blank"` and `rel="noopener noreferrer"`. Keep the `data-evidence-gallery` wrapper so the script can enhance that same content. Adding entries only to the JavaScript array does not populate the no-script page.
+Mirror the matching screenshots as static figures inside each panel's wrapper, with the local image, descriptive alt text, caption, and full-image link using `target="_blank"` and `rel="noopener noreferrer"`. Preserve both data attributes so JavaScript enhances the same content. An image assigned to two topics needs figures in both panels but only one underlying asset. Without JavaScript, all topic panels and their figures remain visible and the image links still work. Adding entries only to the array does not populate that fallback.
 
 The included official game artwork and 1sT.MN logo identify the projects. They are not contribution screenshots or evidence of individual contributions. Their provenance is recorded in [assets/projects/SOURCES.md](assets/projects/SOURCES.md). Official game links are labeled accordingly. Set `referenceUrl` and `referenceLabel` to real public references; leave an unavailable reference blank and remove its static fallback link too.
 
@@ -178,7 +200,7 @@ Populate `learning` only with confirmed current-learning topics. It is empty by 
 The public name, alias, email, and gameplay/DataStore contributions are already supplied. Additional content is optional:
 
 - [ ] A GitHub profile URL and other professional-profile links you want public.
-- [ ] Authentic contribution screenshots with useful captions and image descriptions.
+- [ ] Supplied images for 1sT.MN and any additional relevant topics; development-environment or code evidence where publicly shareable. All fifteen supplied Roblox in-game images are included in their related panels.
 - [ ] Public contribution references or repositories, where available. Existing official project links do not verify individual contributions.
 - [ ] Further implementation details, only if you choose to provide and substantiate them.
 
@@ -220,7 +242,7 @@ The public site is [uuganchimegdorjsembe.github.io](https://uuganchimegdorjsembe
 
 If the publishing branch has a different name, select that existing branch instead. GitHub documents these settings in [Configuring a publishing source for your GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
-Keep local URLs relative: `./arsenal.html`, `./about.html#skills`, and `./assets/projects/evidence/arsenal-studio.webp` work under a repository subpath when the referenced files exist. Avoid paths beginning with `/`, which point at the domain root. CSS asset paths are relative to the CSS file, such as `../assets/fonts/Manrope.ttf`. No server routes, rewriting, or custom workflow are required. Keep `.nojekyll` at the publishing root.
+Keep local URLs relative: `./arsenal.html`, `./about.html#skills`, and `./assets/projects/evidence/arsenal-weapon-gameplay.webp` work under a repository subpath when the referenced files exist. Avoid paths beginning with `/`, which point at the domain root. CSS asset paths are relative to the CSS file, such as `../assets/fonts/Manrope.ttf`. No server routes, rewriting, or custom workflow are required. Keep `.nojekyll` at the publishing root.
 
 Generated files in `output/` and temporary local files are excluded from Git. The public CV, its two preview images, and the supplied profile picture are included in `assets/`.
 

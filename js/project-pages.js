@@ -111,13 +111,24 @@
     const project = projects.find(
       (item) => item.id === gallery.dataset.evidenceGallery,
     );
+    const topic = gallery.dataset.evidenceTopic;
     const images = (
       Array.isArray(project?.evidence) ? project.evidence : []
     ).filter(
       (item) =>
-        localImage(item.src) && typeof item.alt === "string" && item.alt.trim(),
+        localImage(item.src) &&
+        typeof item.alt === "string" &&
+        item.alt.trim() &&
+        (!topic || (Array.isArray(item.topics) && item.topics.includes(topic))),
     );
     if (!images.length) return;
+    gallery.setAttribute("role", "group");
+    const heading = gallery.closest("[data-system-panel]")?.querySelector("h3");
+    if (heading)
+      gallery.setAttribute(
+        "aria-label",
+        heading.textContent.trim() + " screenshots",
+      );
 
     let current = 0;
     let failed = false;
@@ -129,6 +140,7 @@
     zoom.rel = "noopener noreferrer";
     const image = document.createElement("img");
     image.decoding = "async";
+    image.loading = "lazy";
     image.width = 1600;
     image.height = 900;
     zoom.append(image);
@@ -148,6 +160,7 @@
     status.setAttribute("role", "status");
     const steps = document.createElement("div");
     steps.className = "gallery-steps";
+    steps.hidden = images.length < 2;
     const previous = document.createElement("button");
     previous.type = "button";
     previous.className = "gallery-control";
@@ -174,7 +187,7 @@
         "Show screenshot " + (index + 1) + ": " + item.alt,
       );
       const thumbnail = document.createElement("img");
-      thumbnail.src = item.src;
+      thumbnail.src = localImage(item.thumbnail) ? item.thumbnail : item.src;
       thumbnail.alt = "";
       thumbnail.width = 96;
       thumbnail.height = 60;
@@ -194,7 +207,7 @@
 
     const dialog = document.createElement("dialog");
     dialog.className = "image-dialog";
-    dialog.setAttribute("aria-label", "Enlarged development screenshot");
+    dialog.setAttribute("aria-label", "Enlarged project screenshot");
     const dialogHeader = document.createElement("div");
     dialogHeader.className = "image-dialog-header";
     const dialogStatus = document.createElement("span");
@@ -217,8 +230,43 @@
     });
     const enlargedCaption = document.createElement("p");
     enlargedCaption.className = "gallery-caption";
+    const dialogControls = document.createElement("div");
+    dialogControls.className = "gallery-controls";
+    const fullSizeLink = document.createElement("a");
+    fullSizeLink.className = "text-link";
+    fullSizeLink.textContent = "Open full-size image ↗";
+    fullSizeLink.target = "_blank";
+    fullSizeLink.rel = "noopener noreferrer";
+    fullSizeLink.setAttribute(
+      "aria-label",
+      "Open full-size image (opens in a new tab)",
+    );
+    const dialogSteps = document.createElement("div");
+    dialogSteps.className = "gallery-steps";
+    dialogSteps.hidden = images.length < 2;
+    const dialogPrevious = document.createElement("button");
+    dialogPrevious.type = "button";
+    dialogPrevious.className = "gallery-control";
+    dialogPrevious.textContent = "← Previous";
+    dialogPrevious.setAttribute("aria-label", "Previous enlarged screenshot");
+    const dialogNext = document.createElement("button");
+    dialogNext.type = "button";
+    dialogNext.className = "gallery-control";
+    dialogNext.textContent = "Next →";
+    dialogNext.setAttribute("aria-label", "Next enlarged screenshot");
+    dialogPrevious.disabled = dialogNext.disabled = images.length < 2;
+    dialogPrevious.addEventListener("click", () => show(current - 1));
+    dialogNext.addEventListener("click", () => show(current + 1));
+    dialogSteps.append(dialogPrevious, dialogNext);
+    dialogControls.append(fullSizeLink, dialogSteps);
     dialogHeader.append(dialogStatus, close);
-    dialog.append(dialogHeader, enlarged, enlargedUnavailable, enlargedCaption);
+    dialog.append(
+      dialogHeader,
+      enlarged,
+      enlargedUnavailable,
+      enlargedCaption,
+      dialogControls,
+    );
     document.body.append(dialog);
 
     const updateDialog = () => {
@@ -226,6 +274,7 @@
       enlargedUnavailable.hidden = true;
       enlarged.src = images[current].src;
       enlarged.alt = images[current].alt;
+      fullSizeLink.href = images[current].src;
       enlargedCaption.textContent = images[current].caption || "";
       dialogStatus.textContent =
         "Image " + (current + 1) + " of " + images.length;
@@ -233,9 +282,18 @@
     const show = (index) => {
       current = (index + images.length) % images.length;
       failed = false;
+      zoom.hidden = false;
       image.hidden = false;
       unavailable.hidden = true;
       zoom.removeAttribute("aria-disabled");
+      image.width =
+        Number.isInteger(images[current].width) && images[current].width > 0
+          ? images[current].width
+          : 1600;
+      image.height =
+        Number.isInteger(images[current].height) && images[current].height > 0
+          ? images[current].height
+          : 900;
       image.src = images[current].src;
       image.alt = images[current].alt;
       zoom.href = images[current].src;
@@ -252,6 +310,7 @@
     };
     image.addEventListener("error", () => {
       failed = true;
+      zoom.hidden = true;
       image.hidden = true;
       unavailable.hidden = false;
       zoom.setAttribute("aria-disabled", "true");
@@ -265,6 +324,14 @@
         event.preventDefault();
         return;
       }
+      if (
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey
+      )
+        return;
       if (typeof dialog.showModal !== "function") return;
       event.preventDefault();
       updateDialog();
@@ -278,7 +345,8 @@
     });
     dialog.addEventListener("close", () => {
       document.body.style.overflow = originalOverflow;
-      zoom.focus();
+      if (failed) next.focus();
+      else zoom.focus();
     });
     dialog.addEventListener("keydown", (event) => {
       if (!["ArrowLeft", "ArrowRight"].includes(event.key) || images.length < 2)
