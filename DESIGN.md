@@ -36,6 +36,8 @@ The ivory, charcoal, and orange palette provides continuity across the pages. Th
 
 ## Interaction and accessibility
 
+External-link arrows use the local `assets/icons/external-link.svg` mask so phone fonts cannot turn them into emoji. Static HTML, enhanced links, and project-card indicators share the same icon.
+
 Navigation uses real relative HTML links and hash targets. The mobile menu uses native `<details>` and `<summary>`, with JavaScript enhancements for closing it after a selection, on Escape, or when clicking elsewhere. Local project-page links and external references identify when they open a new tab; breadcrumbs and “All projects” return to the directory in the current tab.
 
 The directory's category filters are a progressive enhancement. Without JavaScript, the controls remain hidden and every static card is visible. With scripts, filter buttons expose pressed state and update an announced project count.

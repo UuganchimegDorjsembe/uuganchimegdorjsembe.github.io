@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "css/style.css"
+        ],
+        "createdAt": "2026-10-21T09:07:32.705Z",
+        "reason": "Retained pre-existing .name-heading styling under the user's instruction to preserve the approved portfolio design; this change fixes external-link icons only."
+      }
+    ]
+  }
+}

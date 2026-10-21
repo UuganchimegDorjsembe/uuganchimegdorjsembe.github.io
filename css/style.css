@@ -16,6 +16,7 @@
   --white: #fffefa;
   --ease: cubic-bezier(0.32, 0.72, 0, 1);
   --radius: 8px;
+  --external-link-icon: url("../assets/icons/external-link.svg");
 }
 
 * {
@@ -61,6 +62,16 @@ img,
 svg {
   display: block;
   max-width: 100%;
+}
+.link-arrow {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  background-color: currentColor;
+  -webkit-mask: var(--external-link-icon) center / contain no-repeat;
+  mask: var(--external-link-icon) center / contain no-repeat;
 }
 img {
   height: auto;
@@ -513,9 +524,7 @@ summary:focus-visible {
   border-radius: 50%;
   background: var(--paper);
   color: var(--ink);
-  content: "↗";
-  font-size: 24px;
-  line-height: 32px;
+  content: "";
   transition:
     background 300ms var(--ease),
     color 300ms var(--ease),
@@ -524,12 +533,33 @@ summary:focus-visible {
 .work-preview:hover img {
   transform: scale(1.035);
 }
+.work-preview::before {
+  position: absolute;
+  z-index: 1;
+  right: 24px;
+  bottom: 24px;
+  width: 24px;
+  height: 24px;
+  background: var(--ink);
+  content: "";
+  pointer-events: none;
+  -webkit-mask: var(--external-link-icon) center / contain no-repeat;
+  mask: var(--external-link-icon) center / contain no-repeat;
+  transition:
+    background 300ms var(--ease),
+    transform 300ms var(--ease);
+}
 .work-preview:hover::after {
   background: var(--accent);
   color: var(--paper);
   transform: rotate(5deg);
 }
-.work-preview:active::after {
+.work-preview:hover::before {
+  background: var(--paper);
+  transform: rotate(5deg);
+}
+.work-preview:active::after,
+.work-preview:active::before {
   transform: scale(0.95);
 }
 .preview-first,

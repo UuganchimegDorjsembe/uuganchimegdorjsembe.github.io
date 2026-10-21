@@ -234,7 +234,11 @@
     dialogControls.className = "gallery-controls";
     const fullSizeLink = document.createElement("a");
     fullSizeLink.className = "text-link";
-    fullSizeLink.textContent = "Open full-size image ↗";
+    fullSizeLink.textContent = "Open full-size image ";
+    const fullSizeArrow = document.createElement("span");
+    fullSizeArrow.className = "link-arrow";
+    fullSizeArrow.setAttribute("aria-hidden", "true");
+    fullSizeLink.append(fullSizeArrow);
     fullSizeLink.target = "_blank";
     fullSizeLink.rel = "noopener noreferrer";
     fullSizeLink.setAttribute(

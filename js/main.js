@@ -26,7 +26,7 @@
     }
     anchor.textContent = label + " ";
     const arrow = document.createElement("span");
-    arrow.textContent = "↗";
+    arrow.className = "link-arrow";
     arrow.setAttribute("aria-hidden", "true");
     anchor.append(arrow);
     return anchor;
